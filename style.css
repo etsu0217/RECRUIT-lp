@@ -653,6 +653,20 @@ NEWS
   box-sizing:border-box;
 }
 
+/* お知らせピルとピンク枠の縦中心を一致させる（slick fadeの高さズレ対策） */
+.news_list,
+.news_list .slick-list,
+.news_list .slick-track,
+.news_list .slick-slide{
+  height: 74px !important;
+}
+.news_list .slick-slide > div{
+  height: 74px;
+}
+.news_list .slick-slide .post{
+  height: 74px;
+}
+
 /* 日付 */
 
 .post--date{
@@ -828,7 +842,7 @@ NEWS
 .home_message--en svg{
   position: absolute;
   top: 330px;
-  right: -330px;
+  right: -250px;
   display:block;
   width:140px;
   height:auto;
@@ -844,7 +858,7 @@ NEWS
   position: absolute;
 
   top: 370px;
-  right: -490px;
+  right: -410px;
 
   width: 150px; /* 線の長さ */
   height: 1px;  /* 線の太さ */
@@ -2049,7 +2063,10 @@ letter-spacing: 0.1em;}
   display: block;
   margin: 0 auto;
   position: relative;
-  top: -20px;
+  top: -60px;                        /* 人物画像を上へ詰める */
+  width: 100%;
+  max-width: calc(100% - 300px);     /* .home_message(.inner-xl)と同じ本文幅に収める */
+  height: auto;
   z-index: 100;
 }
 
