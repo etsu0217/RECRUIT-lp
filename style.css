@@ -828,7 +828,7 @@ NEWS
 .home_message--en svg{
   position: absolute;
   top: 330px;
-  right: 50px;
+  right: -75px;
   display:block;
   width:140px;
   height:auto;
@@ -844,7 +844,7 @@ NEWS
   position: absolute;
 
   top: 370px;
-  right: -110px;
+  right: -235px;
 
   width: 150px; /* 線の長さ */
   height: 1px;  /* 線の太さ */
