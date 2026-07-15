@@ -2300,6 +2300,9 @@ letter-spacing: 0.1em;}
      セクションごと前面に出して背面へ回す。
      赤枠(999)・固定ナビ(10000〜)より下は維持 */
   z-index: 200;
+  /* カード下端と赤帯(.recruit1::before)の間隔。.recruit1ごと下げるので
+     赤帯と募集要項見出しの間隔は変わらない。ここの数値だけで調整可 */
+  margin-bottom: 40px;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;   /* 余白を右に寄せず、写真＝左端／カード＝右端で均等に */
@@ -3922,6 +3925,10 @@ letter-spacing: 0.1em;}
   /* PC用の画面高さ確保(min-height:100vh)を解除し、下の大きな空白をなくして続けて表示 */
   .interview-area2{
     min-height: 0;
+  }
+  /* カード下の余白はPC専用のため解除 */
+  .interview-area{
+    margin-bottom: 0;
   }
   
   .member-card{
