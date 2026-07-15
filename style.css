@@ -389,7 +389,7 @@ body{
 .p1{
   width:160px;
   left:70px;
-  bottom:55px;
+  bottom:75px;
 }
 
 .p2{
@@ -414,7 +414,7 @@ body{
 .p5{
   width:300px;
   left:855px;
-  top:90px;
+  top:60px;
 }
 
 .p6{
@@ -658,13 +658,13 @@ NEWS
 .news_list .slick-list,
 .news_list .slick-track,
 .news_list .slick-slide{
-  height: 74px !important;
+  height: 40px !important;
 }
 .news_list .slick-slide > div{
-  height: 74px;
+  height: 40px;
 }
 .news_list .slick-slide .post{
-  height: 74px;
+  height: 40px;
 }
 
 /* 日付 */
