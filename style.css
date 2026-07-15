@@ -2297,12 +2297,8 @@ letter-spacing: 0.1em;}
 .interview-area{
   position: relative;
   /* .page-title(Interview)がz-index:100で右のmember-areaに重なるため、
-     セクションごと前面に出して背面へ回す。
-     赤枠(999)・固定ナビ(10000〜)より下は維持 */
-  z-index: 200;
-  /* カード下端と赤帯(.recruit1::before)の間隔。.recruit1ごと下げるので
-     赤帯と募集要項見出しの間隔は変わらない。ここの数値だけで調整可 */
-  margin-bottom: 40px;
+     セクションごと前面に出して背面へ回す（.interview-area2 と同じ手法） */
+  z-index: 101;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;   /* 余白を右に寄せず、写真＝左端／カード＝右端で均等に */
@@ -2319,9 +2315,10 @@ letter-spacing: 0.1em;}
   top: 40px;
   align-self: flex-start;
   margin-top: 0;
-  /* 下端の余白。赤帯(.recruit1::before)は .recruit1 の内側(top:0)へ移したので
-     ここで位置を合わせる必要はなくなった */
-  margin-bottom: 48px;
+  /* sticky で降りきったときの下端を .interview-area の下端＝赤帯(.recruit1::before,
+     top:0)の上端にぴったり合わせる。カード側の余白は .member-area の
+     padding-bottom で別に作るので、ここは 0 */
+  margin-bottom: 0;
   z-index: 100;
 }
 
@@ -2507,6 +2504,9 @@ letter-spacing: 0.1em;}
 .member-area {
   position: relative;
   padding-top: 30px; /* 線と中身の余白 */
+  /* カード下端と赤帯の間隔。左のスライドは下端を赤帯に接させるため、
+     カード側だけここで余白を作る。間隔の調整はこの数値だけで完結する */
+  padding-bottom: 80px;
 }
 
 .recruit1 {
@@ -3930,11 +3930,6 @@ letter-spacing: 0.1em;}
   .interview-area2{
     min-height: 0;
   }
-  /* カード下の余白はPC専用のため解除 */
-  .interview-area{
-    margin-bottom: 0;
-  }
-  
   .member-card{
     background: #fff;      /* レスポンシブ：カードは白 */
     padding: 20px;         /* レスポンシブ：パディングを小さく */
