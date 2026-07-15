@@ -3452,14 +3452,19 @@ letter-spacing: 0.1em;}
     padding: 0 10px;
   }
   .home_message--ttl{
-    font-size: 1.4rem;
+    font-size: 0.7rem;
     gap: 8px;
     align-items: flex-start;   /* 大見出しを左詰め */
     text-align: left;
   }
-  .fz-88{ font-size: 1.3rem; }
+  .fz-88{ font-size: 1.1rem; }
   .fz-48{ font-size: 0.6rem; }
-  .fz-112{ font-size: 1.4rem; }
+  .fz-112{ font-size: 1.3rem; }
+  /* 見出し内は PC 指定(.home_message--ttl .fz-*)が詳細度で勝つため、
+     同じ詳細度で指定して半分の大きさにする */
+  .home_message--ttl .fz-88{ font-size: 2.25rem; }
+  .home_message--ttl .fz-48{ font-size: 1.25rem; }
+  .home_message--ttl .fz-112{ font-size: 2.25rem; }
   .home_message--en-v,
   .home_message--deco,
   .home_message--deco02,
@@ -3831,7 +3836,10 @@ letter-spacing: 0.1em;}
     display: none;
   }
   .cta--deco{
-    display:none
+    width: 100%;
+    max-width: 100%;               /* PC の calc(100% - 300px) を解除して幅いっぱいに */
+    height: auto;
+    top: 0;                        /* 上に詰めるとお問い合わせ枠に重なるため解除 */
   }
 }
 
