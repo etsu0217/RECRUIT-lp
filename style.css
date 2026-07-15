@@ -3831,8 +3831,7 @@ letter-spacing: 0.1em;}
     display: none;
   }
   .cta--deco{
-    width: 100%;
-    height: auto;
+    display:none
   }
 }
 
